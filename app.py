@@ -33,8 +33,14 @@ def index():
     if request.method == "POST":
         file = request.files["srt_file"]
         if file:
-            input_path = "uploaded.srt"
-            output_path = "translated.srt"
+            filename = file.filename
+            ext = os.path.splitext(filename)[1].lower()
+
+            if ext not in [".srt", ".txt"]:
+                return "❌ Formato não suportado. Envie apenas arquivos .srt ou .txt", 400
+
+            input_path = "uploaded" + ext
+            output_path = "translated" + ext
             file.save(input_path)
 
             with open(input_path, "r", encoding="utf-8") as f:
@@ -50,5 +56,6 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
+
 

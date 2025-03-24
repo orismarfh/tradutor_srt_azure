@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Tradutor de Legendas</title>
+  <title>Oris Tradutor de Legendas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    input, button {
+      margin-top: 20px;
+      font-size: 1em;
+      padding: 8px 16px;
+    }
+  </style>
 </head>
 <body>
-  <h2>Traduzir arquivo .srt de Inglês para Japonês</h2>
+  <h1>🎌 Oris Tradutor de Legendas</h1>
+  <p>Envie um arquivo <strong>.srt</strong> ou <strong>.txt</strong> com texto em inglês e receba a tradução para japonês 🇯🇵</p>
+  
   <form method="POST" enctype="multipart/form-data">
-    <input type="file" name="srt_file" accept=".srt" required>
+    <input type="file" name="srt_file" accept=".srt,.txt" required><br>
     <button type="submit">Traduzir</button>
   </form>
 </body>
 </html>
-
